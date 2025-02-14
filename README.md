@@ -1,2 +1,2 @@
 # lmqgithub.io
-My 
+Learning GitHub is fun.
