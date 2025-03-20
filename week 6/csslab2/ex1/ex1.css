@@ -1,0 +1,54 @@
+* {
+    font: 20px "Comic Sans MS";
+}
+MyCustomizeTag {
+    display: block;
+    text-align: center;
+    text-transform: capitalize;
+    text-decoration: underline;
+    width: 500px;
+}
+div:active {
+    background-color: #f00;
+}
+div {
+    background-color: yellow;
+    margin: 0px 0px 5px 5px;
+    width: 300px;
+}
+.GroupFormat {
+    font-weight: bold;
+    color: #f00;
+    width: 400px;
+}
+#TheHighestPriority {
+    background-color: #000;
+    font-weight: none;
+    font: italic 30px "Times New Roman";
+    color: #fff;
+}
+
+a:hover {
+    color: #f00;
+}
+.list li::before {
+    content: ">";
+    color: #f00;
+    font-size: 1cm;
+    margin-right: 0.5cm;
+}
+.list li::after {
+    content: "<";
+    color: #f00;
+    font-size: 1cm;
+    margin-left: 0.5cm;
+}
+.list li {
+    color: blue;
+}
+.list li:nth-child(odd) {
+    color: pink;
+}
+.list li:nth-child(even) {
+    color: lightblue;
+}
