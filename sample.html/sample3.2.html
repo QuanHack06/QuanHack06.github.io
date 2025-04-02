@@ -1,0 +1,46 @@
+<html>
+<head>
+    <title> Contact Hihihi </title>
+    <style>
+        form {
+            background-color:rgb(224, 230, 230);
+            border-radius: 15px;
+            padding:10px;
+            margin-left: 20px;
+        }
+        label {
+            font-weight: bold;
+        }
+        input, textarea {
+            padding: 5px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h1> Contact Hehe </h1>
+    <form onsubmit="return validateForm()">
+        <label>Name </label>
+        <input type="text" id="name" placeholder ="Text input">
+        <label>Email </label>
+        <input type="email" id="email" placeholder ="Email input">
+        <label>Message </label>
+        <textarea id="message" placeholder="Textarea"></textarea>
+        <button type="submit">Submit</button>
+    </form>
+    <script>
+        function validateForm() {
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var message = document.getElementById("message").value;
+            if (name === "" || email === "" || message === "") {
+                alert("All fields must be filled!");
+                return false;
+            } else {
+                alert("Form submitted successfully!!! ");
+                return true;
+            }
+        }
+    </script>
+</body>
+</html>

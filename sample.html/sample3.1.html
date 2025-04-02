@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 350px;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        label {
+            font-weight: bold;
+            margin-top: 10px;
+            display: block;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .error {
+            color: red;
+            font-size: 14px;
+            display: none;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            width: 100%;
+            margin-top: 15px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .success-message {
+            color: green;
+            text-align: center;
+            font-weight: bold;
+            display: none;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Contact Us</h2>
+        <form id="contactForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name">
+            <span class="error" id="nameError">Name is required</span>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email">
+            <span class="error" id="emailError">Valid email is required</span>
+
+            <label for="message">Message:</label>
+            <textarea id="message" rows="4"></textarea>
+            <span class="error" id="messageError">Message cannot be empty</span>
+
+            <button type="button" onclick="validateForm()">Send</button>
+            <p class="success-message" id="successMessage">Form submitted successfully!</p>
+        </form>
+    </div>
+
+    <script>
+        function validateForm() {
+            let isValid = true;
+
+            let name = document.getElementById("name").value.trim();
+            let email = document.getElementById("email").value.trim();
+            let message = document.getElementById("message").value.trim();
+
+            document.getElementById("nameError").style.display = name ? "none" : "block";
+            document.getElementById("emailError").style.display = email.includes("@") ? "none" : "block";
+            document.getElementById("messageError").style.display = message ? "none" : "block";
+
+            if (!name || !email.includes("@") || !message) {
+                isValid = false;
+            }
+
+            if (isValid) {
+                document.getElementById("successMessage").style.display = "block";
+                setTimeout(() => {
+                    document.getElementById("successMessage").style.display = "none";
+                    document.getElementById("contactForm").reset();
+                }, 3000);
+            }
+        }
+    </script>
+</body>
+</html>

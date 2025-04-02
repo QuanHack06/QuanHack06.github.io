@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website hiệu sách</title>
+    <style>
+        nav {
+            background-color: #333;
+            padding: 10px;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            gap: 15px;
+        }
+        li {
+            color: white;
+        }
+        .hidden {
+            display: none;
+        }
+        a {
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+    <script>
+        function toggleMenu() {
+            document.getElementById("navMenu").classList.toggle("hidden");
+        }
+    </script>
+</head>
+<body>
+    <button onclick="toggleMenu()">Toggle Menu</button>
+    <nav id="navMenu">
+        <ul>
+            <li><a href="#">Home</a> •</li>
+            <li><a href="#">Books ©</a> •</li>
+            <li><a href="#">Authors ™</a> •</li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+</body>
+</html>

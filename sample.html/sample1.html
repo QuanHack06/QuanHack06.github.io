@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <style>
+            body{
+                font-family: Arial, Helvetica, sans-serif;
+                margin: 20px;
+            }
+            table{
+                border-collapse: collapse;
+            }
+            th,td{
+                border: 1px solid #888;
+                padding: 10px;text-align: left;;
+            }
+            </style>
+            <script>
+            function changeColor() {
+                let table = document.getElementById("dataTable");
+                let isRed = table.classList.contains("red-text");
+                
+                if (isRed) {
+                    table.classList.remove("red-text");
+                    table.style.color = "black";
+                } else {
+                    table.classList.add("red-text");
+                    table.style.color = "red";
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <h2 style="text-align:left;">Exp1</h2>
+        <button onclick="changeColor()">Change Color</button>
+   
+        <table id="dataTable">
+            <tr><th>Part</th><th>Price ($)</th></tr>
+            <tr><th>CPU</th><th>250$</th></tr>
+            <tr><th>RAM</th><th>150</th></tr>
+            <tr><th>GPU</th><th>350</th></tr>
+            <tr><th>SD</th><th>250</th></tr>
+
+        </table>
+    </body>
+</html>
