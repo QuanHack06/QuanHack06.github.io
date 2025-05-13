@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Điều Hướng</title>
+    <style>
+        .menu {
+            display: flex;
+            background-color: #f3f3f3;
+            padding: 10px;
+        }
+        .menu a {
+            margin-right: 10px;
+            text-decoration: none;
+        }
+        .menu a::after {
+            content: " •";
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Menu Điều Hướng Cửa Hàng Sách</h1>
+
+<div class="menu" id="navMenu">
+    <a href="#">Home</a>
+    <a href="#">Books ©</a>
+    <a href="#">Authors ™</a>
+    <a href="#">Contact</a>
+</div>
+
+<button onclick="toggleMenu()">Toggle Menu</button>
+
+<script>
+    function toggleMenu() {
+        const menu = document.getElementById("navMenu");
+        menu.classList.toggle("hidden");
+    }
+</script>
+
+</body>
+</html>

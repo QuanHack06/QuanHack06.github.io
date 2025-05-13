@@ -1,0 +1,33 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Lê Minh Quân 24070378</title>
+    </head>
+    <body>
+        <h1>Compare Two Numbers</h1>
+        <input type="number" id="number1" placeholder="Enter first number">
+        <input type="number" id="number2" placeholder="Enter second number">
+        <button onclick="compareNumbers()">Compare</button>
+        <p id="result"></p>
+
+        <script>
+            function compareNumbers() {
+                const num1 = parseFloat(document.getElementById('number1').value);
+                const num2 = parseFloat(document.getElementById('number2').value);
+                const result = document.getElementById('result');
+
+                if (isNaN(num1) || isNaN(num2)) {
+                    result.textContent = 'Please enter valid numbers.';
+                } else if (num1 > num2) {
+                    result.textContent = `${num1} > ${num2}.`;
+                } else if (num1 < num2) {
+                    result.textContent = `${num2} <${num1}.`;
+                } else {
+                    result.textContent = 'Both numbers are equal.';
+                }
+            }
+        </script>
+    </body>
+    </html>

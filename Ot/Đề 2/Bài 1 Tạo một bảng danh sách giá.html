@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bảng danh sách giá</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Bảng danh sách giá các bộ phận máy tính</h1>
+<table id="priceList">
+    <thead>
+        <tr>
+            <th>Bộ phận</th>
+            <th>Giá</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>CPU ©</td>
+            <td>$250</td>
+        </tr>
+        <tr>
+            <td>RAM ™</td>
+            <td>$80</td>
+        </tr>
+        <tr>
+            <td>Ổ cứng SSD •</td>
+            <td>$100</td>
+        </tr>
+        <tr>
+            <td>Card đồ họa</td>
+            <td>$350</td>
+        </tr>
+    </tbody>
+</table>
+
+<button onclick="changeColor()">Thay đổi màu</button>
+
+<script>
+    let isRed = false;
+
+    function changeColor() {
+        const table = document.getElementById("priceList");
+        const rows = table.getElementsByTagName("td");
+
+        for (let i = 0; i < rows.length; i++) {
+            if (isRed) {
+                rows[i].style.color = "black";
+            } else {
+                rows[i].style.color = "red";
+            }
+        }
+
+        isRed = !isRed;
+    }
+</script>
+
+</body>
+</html>
